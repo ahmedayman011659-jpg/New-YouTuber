@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Roadmap | ابدأ قناتك على يوتيوب</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--panel:#151515;--line:#2c2c2c;--acc:#ff2a3a;--acc2:#b30012;--text:#f5f5f5;--mute:#a8a8a8;--soft:#2a0a0d;--onacc:#fff}
+[data-theme=light]{--bg:#fff;--panel:#f5f5f5;--line:#dcdcdc;--acc:#e0101f;--acc2:#8f000d;--text:#111;--mute:#555;--soft:#fdeceb}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Cairo",system-ui,Arial,sans-serif;line-height:1.8;font-size:17px;transition:background .25s,color .25s}
+html[lang=ar] .en,html[lang=en] .ar{display:none}
+.wrap{max-width:1040px;margin:auto;padding:0 20px}
+h1,h2,h3{line-height:1.3;font-weight:900}
+section{padding:60px 0}
+h2{font-size:clamp(26px,5vw,38px);margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:28px;max-width:62ch}
+
+.bar{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.logo{font-weight:900;font-size:19px}.logo i{font-style:normal;background:var(--acc);color:var(--onacc);padding:1px 9px;border-radius:7px;margin-inline-end:8px}
+.ctl{display:flex;gap:8px}
+.ctl button{font:inherit;font-weight:800;cursor:pointer;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:4px 16px;min-width:48px}
+.ctl button:hover{border-color:var(--acc)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+
+.hero{padding:44px 0 30px;background:radial-gradient(800px 400px at 85% 0%,var(--soft),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.hero h1{font-size:clamp(34px,7vw,58px)}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{color:var(--mute);margin:14px 0 22px;font-size:19px;max-width:46ch}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.tag{border:1px solid var(--acc);padding:3px 16px;border-radius:99px;font-weight:700;font-size:15px}
+.btn{display:inline-block;background:var(--acc);color:var(--onacc);text-decoration:none;font-weight:800;padding:12px 30px;border-radius:12px;box-shadow:0 6px 26px #ff2a3a44}
+.art{width:100%;height:auto}
+.fa{fill:var(--acc)}.fb{fill:var(--acc2)}.fp{fill:var(--panel)}.sa{stroke:var(--acc)}.ft{fill:var(--text)}.fo{fill:var(--onacc)}.fl{fill:var(--line)}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-origin:200px 170px}
+@keyframes pl{50%{transform:scale(1.07)}}
+
+.niches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card.main{border-color:var(--acc)}
+.card .ic{font-size:36px;line-height:1;margin-bottom:8px}
+.card h3{font-size:22px;color:var(--acc);margin-bottom:4px}
+.card ul{padding-inline-start:20px;margin-top:8px;color:var(--mute);font-size:15.5px}
+.note{margin-top:20px;background:var(--soft);border-inline-start:4px solid var(--acc);padding:12px 18px;border-radius:10px;font-size:16px}
+
+.tw{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;background:var(--panel);min-width:560px}
+th,td{padding:12px 16px;text-align:start;border-bottom:1px solid var(--line);font-size:15.5px}
+tr:last-child td{border-bottom:0}
+th{background:var(--acc);color:var(--onacc);font-weight:800}
+td:first-child{font-weight:800;color:var(--acc)}
+.tt{font-size:20px;font-weight:900;margin:34px 0 -8px}
+
+.alt{background:var(--panel)}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 18px;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:var(--acc);color:var(--onacc);font-weight:900;font-size:21px}
+.step h3{font-size:19px}
+.step p{color:var(--mute);font-size:15.5px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.big{font-size:42px;font-weight:900;color:var(--acc);line-height:1.15}
+.req{margin-top:8px;color:var(--mute);font-size:15.5px}.req b{color:var(--text)}
+
+footer{text-align:center;padding:46px 20px 56px;color:var(--mute)}
+footer h2{color:var(--text)}
+/* ===== youth style ===== */
+:root{--ink:#fff}[data-theme=light]{--ink:#0a0a0a}
+body{background-image:radial-gradient(var(--line) 1.3px,transparent 1.3px);background-size:22px 22px}
+h2{font-size:clamp(30px,6vw,46px);letter-spacing:-.5px}
+h2 span,footer h2 span{background:linear-gradient(transparent 58%,var(--acc) 58%);padding:0 8px}
+.bar{border-bottom:3px solid var(--ink)}
+.logo i{transform:rotate(-8deg);display:inline-block;border:2px solid var(--ink)}
+.ctl button{border:2px solid var(--ink);box-shadow:3px 3px 0 var(--acc);transition:transform .12s,box-shadow .12s}
+.ctl button:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--acc)}
+.hero{position:relative;padding:56px 0 24px}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(38px,8vw,68px);line-height:1.2}
+.hero h1 em{display:inline-block;background:var(--acc);color:var(--onacc);padding:0 14px;border-radius:12px;transform:rotate(-2.5deg);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.tag{background:var(--panel);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--acc);font-size:17px;font-weight:900}
+.tag:nth-child(odd){transform:rotate(-3deg)}.tag:nth-child(even){transform:rotate(2.5deg)}
+.btn{font-size:20px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.stk{position:absolute;background:var(--panel);border:3px solid var(--ink);border-radius:16px;padding:2px 14px;box-shadow:4px 4px 0 var(--acc);font-weight:900;font-size:19px;animation:bob 3.2s ease-in-out infinite;z-index:2}
+.s1{top:0;inset-inline-end:4%}.s2{top:46%;inset-inline-start:42%;animation-delay:-1s}.s3{bottom:4%;inset-inline-end:10%;animation-delay:-2s}
+@keyframes bob{50%{transform:translateY(-9px) rotate(4deg)}}
+.mq{direction:ltr;overflow:hidden;background:var(--acc);color:#fff;border-block:3px solid var(--ink);transform:rotate(-1.4deg);margin:26px -14px 10px;font-weight:900;font-size:21px}
+.mq>div{display:flex;width:max-content;animation:mq 26s linear infinite}
+.mq span{padding:9px 24px;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card,.step{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--acc);border-radius:18px;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:10px 10px 0 var(--acc)}
+.card.main{background:var(--soft)}
+.card .ic{font-size:44px;display:inline-block;transform:rotate(-8deg)}
+.card h3{font-size:26px;color:var(--text)}
+.step::before{width:50px;height:50px;border-radius:14px;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-6deg);font-size:24px}
+.step:nth-child(even)::before{transform:rotate(5deg)}
+.step h3{font-size:21px}
+.tt{font-size:24px;margin-top:40px}
+.tw{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--acc);border-radius:16px}
+th{font-size:16px;letter-spacing:.2px}
+tbody tr:hover td{background:var(--soft)}
+.note{border:3px dashed var(--acc);border-radius:14px;background:var(--soft)}
+.big{font-size:54px;text-shadow:3px 3px 0 var(--ink)}
+footer h2{font-size:clamp(30px,6vw,48px)}
+.step p{color:var(--text)}
+.step p+p{margin-top:8px}
+.ex,.bad{font-size:15px;border-radius:10px;padding:6px 12px}
+.ex{background:var(--soft);border-inline-start:4px solid var(--acc)}
+.bad{border:2px dashed var(--line);color:var(--mute)!important}
+.ex b,.bad b{color:var(--acc)}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.chips a{text-decoration:none;color:var(--text);font-weight:900;background:var(--panel);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--acc);border-radius:14px;padding:6px 18px;transition:transform .12s}
+.chips a:hover{transform:translate(-2px,-2px)}
+.nh{display:flex;gap:20px;align-items:center;background:var(--acc);color:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);border-radius:22px;padding:22px 26px;margin-bottom:26px}
+.nh h2{margin:0;color:#fff;font-size:clamp(30px,6vw,46px)}
+.nh h2 span{background:none;padding:0}
+.nh p{font-size:18px;font-weight:600;margin-top:2px}
+.ni{font-size:64px;line-height:1;background:#0a0a0a;border-radius:20px;padding:12px 18px;transform:rotate(-6deg);border:3px solid #fff}
+.nn{font-weight:800;font-size:14px;opacity:.9}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.niche .tt{margin-bottom:-6px}
+.niche .tw{margin-top:16px}
+ol.how{counter-reset:h;list-style:none;padding:0;margin-top:14px;display:grid;gap:10px}
+ol.how li{counter-increment:h;display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--acc);border-radius:14px;padding:10px 16px}
+.alt ol.how li{background:var(--bg)}
+ol.how li::before{content:counter(h);flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--acc);color:#fff;font-weight:900}
+ul.earn,ul.mist,ul.plan{list-style:none;padding:0;margin-top:14px;display:grid;gap:10px}
+ul.earn li,ul.mist li,ul.plan li{padding:10px 16px 10px 16px;border-radius:14px;border:2px solid var(--line);background:var(--panel)}
+.alt ul.earn li,.alt ul.mist li,.alt ul.plan li{background:var(--bg)}
+ul.earn li::before{content:"💰 "}
+ul.mist li{border:2px dashed var(--acc)}ul.mist li::before{content:"⚠️ "}
+ul.plan{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+ul.plan li{border:3px solid var(--ink);font-weight:800}ul.plan li::before{content:"🎬 "}
+.ctl a.ytb{font:inherit;font-weight:800;text-decoration:none;color:var(--text);background:var(--panel);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--acc);border-radius:10px;padding:4px 14px;display:inline-flex;align-items:center}
+.ctl a.ytb:first-child{background:var(--acc);color:#fff}
+.yt{padding:34px 0 20px}
+.yt h2{font-size:clamp(26px,5vw,38px)}
+.ytl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.ytl a{text-decoration:none;color:var(--text);background:var(--panel);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--acc);border-radius:16px;padding:14px 18px;display:flex;flex-direction:column;gap:2px;transition:transform .12s,box-shadow .12s}
+.ytl a:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--acc)}
+.ytl b{font-size:19px}.ytl span{color:var(--mute);font-size:14.5px}
+.ysearch{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.ysearch input{flex:1 1 280px;font:inherit;color:var(--text);background:var(--panel);border:3px solid var(--ink);border-radius:14px;padding:10px 16px}
+.ysearch input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+button.dl{font:inherit;font-weight:900;cursor:pointer;background:var(--acc);color:#fff;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:12px;padding:8px 22px;transition:transform .12s,box-shadow .12s}
+button.dl:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+button.dl:disabled{opacity:.7;cursor:wait}
+.dlc p{color:var(--mute);font-size:15px;margin-bottom:14px}
+.dlc .ic{font-size:38px}
+.dlc h3{font-size:22px}
+.pdfwrap{position:fixed;left:-99999px;top:0;width:794px}
+.pdfbox{width:794px;background:var(--bg);color:var(--text)}
+.pdfbox section{padding:18px 0;background:var(--bg)}
+.pdfbox .wrap{max-width:none;padding:0 22px}
+.pdfbox .card,.pdfbox .step,.pdfbox .tw,.pdfbox .nh{box-shadow:none}
+.pdfbox .tw table{min-width:0}
+.pdfbox .pdfhead{padding:14px 22px;border-bottom:4px solid var(--acc);font-weight:900;font-size:22px}
+@media print{body>*:not(.pdfwrap){display:none!important}.pdfwrap{position:static!important;width:auto}.pdfbox{width:auto}}
+@media(max-width:560px){.logo .ar,.logo .en{display:none!important}.ctl{gap:6px}.ctl a.ytb,.ctl button{padding:4px 10px;font-size:14px;min-width:0}}
+.sg{display:grid;gap:10px;max-width:720px}
+.sg label{font-weight:900;margin-top:6px}
+.fld{width:100%;font:inherit;color:var(--text);background:var(--bg);border:3px solid var(--ink);border-radius:14px;padding:10px 16px;resize:vertical}
+.fld:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.fld.bad{border-color:var(--acc);box-shadow:0 0 0 3px var(--soft)}
+.sgchips{display:flex;flex-wrap:wrap;gap:8px}
+.sgchip{font:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--text);background:var(--panel);border:2px solid var(--ink);border-radius:99px;padding:2px 14px}
+.sgchip:hover{background:var(--acc);color:#fff}
+.sg .dl{justify-self:start;margin-top:8px}
+.sgfoot{text-align:center;margin-top:30px;font-size:20px;font-weight:900;color:var(--acc)}
+.grp{border:0;padding:0;min-width:0}
+.grp legend{font-weight:900;margin-bottom:8px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.sg .opt{margin:0;font-weight:800;cursor:pointer;position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:inline-block;background:var(--panel);border:3px solid var(--ink);border-radius:14px;padding:6px 16px;box-shadow:3px 3px 0 var(--acc);transition:transform .1s}
+.opt input:checked+span{background:var(--acc);color:#fff}
+.opt input:focus-visible+span{outline:3px solid var(--acc);outline-offset:3px}
+.opt:hover span{transform:translate(-1px,-1px)}
+.mpout{margin-top:26px}
+.mp{margin-bottom:0}
+.mp .tags{margin:10px 0 4px}
+.mp .tw{margin-top:12px}
+.mp .note{margin-top:18px}
+.mpact{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.mpact[hidden]{display:none}
+a.btn.wa{background:#25d366;color:#0a0a0a;font-size:18px}
+a.btn.alt2{background:var(--panel);color:var(--text);margin-inline-start:12px}
+.coach .ni,#coach .ni{background:#0a0a0a}
+#coach .nh p{max-width:60ch}
+.wanum{font-size:28px!important;font-weight:900!important;margin:6px 0 14px}
+.wafab{position:fixed;z-index:20;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:18px;width:58px;height:58px;display:grid;place-items:center;font-size:28px;text-decoration:none;background:#25d366;border:3px solid var(--ink);border-radius:50%;box-shadow:4px 4px 0 var(--ink);transition:transform .12s}
+.wafab:hover{transform:scale(1.08)}
+.wafab:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+@media print{.wafab{display:none!important}}
+.chatwrap{margin-top:34px}
+.chat{max-width:520px;border:3px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--acc);overflow:hidden;background:var(--panel);padding-bottom:14px}
+.chead{background:#075e54;color:#fff;font-weight:800;padding:10px 16px}
+.bub{max-width:88%;margin:12px 14px 0;padding:9px 14px;border-radius:14px;font-size:15.5px;line-height:1.7;white-space:pre-line;color:#111}
+.bub.me{background:#dcf8c6;margin-inline-start:auto;border-bottom-right-radius:4px}
+.bub.them{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+@media(prefers-reduced-motion:reduce){.stk,.mq>div{animation:none}}
+@media(max-width:780px){.hero .wrap,.niches,.grid2{grid-template-columns:1fr}section{padding:44px 0}.stk{font-size:16px}.two{grid-template-columns:1fr}.nh{flex-direction:column;align-items:flex-start;padding:18px}.ni{font-size:46px}.s2{display:none}.mq{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.pulse{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+ <div class="logo"><i>▶</i><span class="ar">خطة يوتيوب</span><span class="en">YouTube Plan</span></div>
+ <div class="ctl">
+  <a class="ytb" href="https://www.youtube.com" target="_blank" rel="noopener">▶ YouTube</a>
+  <a class="ytb" href="#downloads">⬇ PDF</a>
+  <button id="lang" type="button" aria-label="Language">EN</button>
+  <button id="theme" type="button" aria-label="Theme">☀️</button>
+ </div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <h1><span class="ar">ابدأ قناتك.<br>كبّرها. <em>واكسب منها</em></span><span class="en">Start your channel.<br>Grow it. <em>Cash out.</em></span></h1>
+  <p><span class="ar">من أول فكرة لحد أول فلوس تدخل حسابك. خطوات واضحة لمحتوى الألعاب والتسويق والتقنية، متظبطة للشباب من ١٦ لـ ٢٤ سنة.</span><span class="en">From the first idea to the first payout. Clear steps for gaming, marketing and tech content, built for ages 16–24.</span></p>
+  <div class="tags"><span class="tag"><span class="ar">🎮 ألعاب</span><span class="en">🎮 Gaming</span></span><span class="tag"><span class="ar">📈 تسويق</span><span class="en">📈 Marketing</span></span><span class="tag"><span class="ar">💻 تقنية</span><span class="en">💻 Tech</span></span></div>
+  <a class="btn" href="#steps"><span class="ar">يلا نبدأ</span><span class="en">Let's start</span></a>
+   <a class="btn alt2" href="#builder">✍️ <span class="ar">اصنع خطتك</span><span class="en">Make your plan</span></a>
+ </div>
+ <svg class="art" viewBox="0 0 400 360" role="img" aria-label="Play button, game controller, growth bars and subscribe bell">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--acc)"/><stop offset="1" style="stop-color:var(--acc2)"/></linearGradient>
+  <radialGradient id="w"><stop offset="0" style="stop-color:var(--acc);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--acc);stop-opacity:0"/></radialGradient></defs>
+  <circle cx="200" cy="170" r="170" fill="url(#w)"/>
+  <g class="sa" stroke-width="3" stroke-linecap="round" opacity=".75"><path d="M200 20v26M92 62l18 18M308 62l-18 18M40 170h26M334 170h26"/></g>
+  <g class="pulse"><rect x="95" y="100" width="210" height="140" rx="38" fill="url(#g)"/><path d="M178 135v70l62-35z" fill="#fff"/></g>
+  <rect class="fl" x="48" y="290" width="30" height="40" rx="6"/><rect class="fb" x="90" y="268" width="30" height="62" rx="6"/><rect class="fa" x="132" y="240" width="30" height="90" rx="6" opacity=".8"/><rect class="fa" x="174" y="205" width="30" height="125" rx="6"/>
+  <path class="sa" d="M52 276L108 252L150 222L214 172M196 170h22v22" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--text)"/>
+  <g transform="translate(246 262)"><path class="fp sa" d="M14 0h84c24 0 36 22 42 46 5 22-6 36-22 30-10-4-14-14-24-14H38c-10 0-14 10-24 14C-2 82-13 68-8 46-2 22-10 0 14 0z" stroke-width="4"/><path class="sa" d="M28 22v22M17 33h22" stroke-width="5" stroke-linecap="round"/><circle class="fa" cx="100" cy="26" r="6"/><circle class="fb" cx="114" cy="40" r="6"/></g>
+  <g transform="translate(290 60)"><circle class="fp sa" cx="28" cy="28" r="34" stroke-width="3"/><path class="fa" d="M28 12c-9 0-14 7-14 15v8l-5 6h38l-5-6v-8c0-8-5-15-14-15z"/><circle class="fa" cx="28" cy="48" r="4"/></g>
+  <g transform="translate(46 70) rotate(-8)"><rect width="92" height="44" rx="22" fill="#fff"/><text x="46" y="31" text-anchor="middle" font-family="Cairo,Arial" font-weight="900" font-size="24" fill="#0a0a0a">+1K</text></g>
+  <g class="ft" opacity=".9"><path d="M350 200l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/><path d="M60 190l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>
+ </svg>
+<span class="stk s1"><span class="ar">🔥 ١٦–٢٤ سنة</span><span class="en">🔥 Ages 16–24</span></span>
+ <span class="stk s2">🎮 LVL UP</span>
+ <span class="stk s3"><span class="ar">💰 أول فلوس</span><span class="en">💰 First payout</span></span>
+</div></header>
+<div class="mq" aria-hidden="true">
+ <div class="ar"><span>🎮 ألعاب</span><span>📈 تسويق</span><span>💻 تقنية</span><span>🔥 ابدأ النهارده</span><span>🚀 كبّر قناتك</span><span>💰 اكسب منها</span><span>🎮 ألعاب</span><span>📈 تسويق</span><span>💻 تقنية</span><span>🔥 ابدأ النهارده</span><span>🚀 كبّر قناتك</span><span>💰 اكسب منها</span></div>
+ <div class="en"><span>🎮 Gaming</span><span>📈 Marketing</span><span>💻 Tech</span><span>🔥 Start today</span><span>🚀 Grow your channel</span><span>💰 Cash out</span><span>🎮 Gaming</span><span>📈 Marketing</span><span>💻 Tech</span><span>🔥 Start today</span><span>🚀 Grow your channel</span><span>💰 Cash out</span></div>
+</div>
+<section class="yt" id="youtube"><div class="wrap">
+ <h2><span class="ar">ادخل يوتيوب من هنا</span><span class="en">Jump into YouTube from here</span></h2>
+ <p class="sub"><span class="ar">الروابط بتفتح يوتيوب في تاب جديد، وتقدر ترجع للموقع في أي وقت.</span><span class="en">The links open YouTube in a new tab, and you can come back here anytime.</span></p>
+ <div class="ytl">
+  <a href="https://www.youtube.com" target="_blank" rel="noopener"><b>▶ YouTube</b><span><span class="ar">الصفحة الرئيسية</span><span class="en">Home page</span></span></a>
+  <a href="https://www.youtube.com/create_channel" target="_blank" rel="noopener"><b>✨ <span class="ar">اعمل قناتك</span><span class="en">Create your channel</span></b><span><span class="ar">ابدأ قناة جديدة</span><span class="en">Start a new channel</span></span></a>
+  <a href="https://studio.youtube.com" target="_blank" rel="noopener"><b>🎬 YouTube Studio</b><span><span class="ar">ارفع فيديوهاتك وشوف الإحصائيات</span><span class="en">Upload videos and see analytics</span></span></a>
+  <a href="https://support.google.com/youtube/answer/72851" target="_blank" rel="noopener"><b>💰 <span class="ar">شروط الربح</span><span class="en">Monetization terms</span></b><span><span class="ar">صفحة مساعدة يوتيوب الرسمية</span><span class="en">Official YouTube Help page</span></span></a>
+ </div>
+ <form class="ysearch" id="ysearch">
+  <input id="yq" type="search" autocomplete="off" aria-label="Search YouTube" placeholder="" data-ar="دوّر على أفكار في يوتيوب... مثلاً: أحسن ألعاب موبايل" data-en="Search YouTube for ideas... e.g. best mobile games">
+  <button class="dl" type="submit"><span class="ar">دوّر في يوتيوب</span><span class="en">Search YouTube</span></button>
+ </form>
+</div></section>
+
+
+<section><div class="wrap">
+ <h2><span class="ar">اختار نوع المحتوى بتاعك</span><span class="en">Pick your content type</span></h2>
+ <p class="sub"><span class="ar">ابدأ بنوع واحد، وبعد ما القناة تقف على رجلها وسّع.</span><span class="en">Start with one type. Expand once the channel stands on its feet.</span></p>
+ <div class="chips"><a href="#gaming">🎮 <span class="ar">قسم الألعاب</span><span class="en">Gaming section</span></a><a href="#marketing">📈 <span class="ar">قسم التسويق</span><span class="en">Marketing section</span></a><a href="#tech">💻 <span class="ar">قسم التقنية</span><span class="en">Tech section</span></a></div>
+ <div class="niches">
+  <div class="card main"><div class="ic">🎮</div><h3><span class="ar">الألعاب</span><span class="en">Gaming</span></h3>
+   <p><span class="ar">جمهوره كبير وتدخله بموبايل أو لابتوب عادي.</span><span class="en">Huge audience, and a normal phone or laptop is enough.</span></p>
+   <ul><li><span class="ar">جيمبلاي بتعليق بيضحّك</span><span class="en">Funny commentary gameplay</span></li><li><span class="ar">نصايح وحيل للعبة معينة</span><span class="en">Tips and tricks for one game</span></li><li><span class="ar">أحسن اللحظات والمقالب</span><span class="en">Best moments and fails</span></li></ul></div>
+  <div class="card"><div class="ic">📈</div><h3><span class="ar">التسويق</span><span class="en">Marketing</span></h3>
+   <p><span class="ar">جمهوره أقل بس الفلوس فيه أعلى.</span><span class="en">Smaller audience, but the money per view is higher.</span></p>
+   <ul><li><span class="ar">إزاي تكسب من الإنترنت</span><span class="en">How to earn online</span></li><li><span class="ar">تسويق بالسوشيال ميديا</span><span class="en">Social media marketing</span></li><li><span class="ar">قصص نجاح براندات</span><span class="en">Brand success stories</span></li></ul></div>
+  <div class="card"><div class="ic">💻</div><h3><span class="ar">التقنية</span><span class="en">Tech</span></h3>
+   <p><span class="ar">الناس بتدور عليه طول الوقت والفيديو بيعيش سنين.</span><span class="en">People search for it all the time and videos live for years.</span></p>
+   <ul><li><span class="ar">مراجعات موبايلات وسماعات</span><span class="en">Phone and headphone reviews</span></li><li><span class="ar">شروحات برامج وتطبيقات AI</span><span class="en">Software and AI app tutorials</span></li><li><span class="ar">نصايح للطلبة</span><span class="en">Tips for students</span></li></ul></div>
+ </div>
+
+ <div class="tt"><span class="ar">جدول مقارنة الأنواع</span><span class="en">Content type comparison</span></div>
+ <div class="tw"><table>
+  <thead><tr><th></th><th><span class="ar">🎮 ألعاب</span><span class="en">🎮 Gaming</span></th><th><span class="ar">📈 تسويق</span><span class="en">📈 Marketing</span></th><th><span class="ar">💻 تقنية</span><span class="en">💻 Tech</span></th></tr></thead>
+  <tbody>
+   <tr><td><span class="ar">حجم الجمهور</span><span class="en">Audience size</span></td><td><span class="ar">كبير جداً</span><span class="en">Very large</span></td><td><span class="ar">متوسط</span><span class="en">Medium</span></td><td><span class="ar">كبير</span><span class="en">Large</span></td></tr>
+   <tr><td><span class="ar">المنافسة</span><span class="en">Competition</span></td><td><span class="ar">عالية جداً</span><span class="en">Very high</span></td><td><span class="ar">متوسطة</span><span class="en">Medium</span></td><td><span class="ar">عالية</span><span class="en">High</span></td></tr>
+   <tr><td><span class="ar">الربح من الإعلانات</span><span class="en">Ad revenue</span></td><td><span class="ar">منخفض لمتوسط</span><span class="en">Low to medium</span></td><td><span class="ar">الأعلى</span><span class="en">Highest</span></td><td><span class="ar">متوسط لعالي</span><span class="en">Medium to high</span></td></tr>
+   <tr><td><span class="ar">الأدوات المطلوبة</span><span class="en">Gear needed</span></td><td><span class="ar">جهاز + برنامج تسجيل</span><span class="en">Device + recorder</span></td><td><span class="ar">موبايل + ميكروفون</span><span class="en">Phone + mic</span></td><td><span class="ar">موبايل + إضاءة + أجهزة للمراجعة</span><span class="en">Phone + light + devices to review</span></td></tr>
+   <tr><td><span class="ar">مناسب لـ</span><span class="en">Best for</span></td><td><span class="ar">اللي شخصيته مرحة</span><span class="en">Fun, energetic personalities</span></td><td><span class="ar">اللي بيحب الأرقام والأفكار</span><span class="en">Idea and numbers people</span></td><td><span class="ar">اللي بيحب الشرح والتجربة</span><span class="en">Explainers and testers</span></td></tr>
+  </tbody></table></div>
+ <div class="note"><span class="ar">💡 ابدأ بنوع واحد لأول ١٠ فيديوهات. يوتيوب بيفهم القناة أسرع لما المحتوى يبقى متقارب.</span><span class="en">💡 Stick to one type for your first 10 videos. YouTube understands your channel faster when the content is consistent.</span></div>
+</div></section>
+
+<section class="niche" id="gaming"><div class="wrap">
+ <div class="nh"><div class="ni">🎮</div><div><div class="nn"><span class="ar">القسم 1 من ٣</span><span class="en">Section 1 of 3</span></div><h2><span class="ar">قسم الألعاب</span><span class="en">Gaming</span></h2><p><span class="ar">أكبر جمهور على يوتيوب، وأسهل مجال تبدأ فيه.</span><span class="en">The biggest audience on YouTube and the easiest niche to start in.</span></p></div></div>
+ <div class="two">
+  <div class="card main"><h3><span class="ar">إيه هو المجال ده؟</span><span class="en">What is this niche?</span></h3><p><span class="ar">بتصوّر نفسك بتلعب وبتعلّق على اللعب بشخصيتك. الناس بتتفرج عشان تتسلى، أو تتعلم حركة، أو تعرف اللعبة تستاهل ولا لأ.</span><span class="en">You record yourself playing and add commentary with your own personality. People watch to have fun, learn a move, or decide if a game is worth it.</span></p></div>
+  <div class="card"><h3><span class="ar">مين بيتفرج؟</span><span class="en">Who watches?</span></h3><p><span class="ar">شباب من ١٦ لـ ٢٤ بيحبوا لعبة معينة وبيدوروا على حيل ومراجعات ولحظات مضحكة.</span><span class="en">Young people aged 16–24 who love a specific game and look for tips, reviews and funny moments.</span></p></div>
+ </div>
+ <div class="tt"><span class="ar">أنواع الفيديوهات اللي تعملها</span><span class="en">Video types you can make</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">النوع</span><span class="en">Type</span></th><th><span class="ar">مثال لعنوان</span><span class="en">Example title</span></th><th><span class="ar">ليه بينجح؟</span><span class="en">Why it works</span></th></tr></thead><tbody><tr><td><span class="ar">جيمبلاي بتعليق</span><span class="en">Commentary gameplay</span></td><td><span class="ar">أول ساعة في لعبة جديدة</span><span class="en">My first hour in a new game</span></td><td><span class="ar">الناس بتدور على اللعبة الجديدة وبتحب الشخصية</span><span class="en">People search for new games and enjoy personality</span></td></tr><tr><td><span class="ar">حيل ونصايح</span><span class="en">Tips and tricks</span></td><td><span class="ar">٥ حيل مش هتعرفها في لعبتك</span><span class="en">5 tricks you don't know in your game</span></td><td><span class="ar">فايدة واضحة من أول ثانية</span><span class="en">Clear value from second one</span></td></tr><tr><td><span class="ar">أحسن اللحظات</span><span class="en">Best moments</span></td><td><span class="ar">أغرب مقلب حصلي في اللعبة</span><span class="en">The weirdest fail I had</span></td><td><span class="ar">بيتحول لشورتس بسهولة</span><span class="en">Easily becomes a Short</span></td></tr><tr><td><span class="ar">مراجعة لعبة</span><span class="en">Game review</span></td><td><span class="ar">هل اللعبة دي تستاهل؟</span><span class="en">Is this game worth it?</span></td><td><span class="ar">الناس بتقرر تحمّل أو تشتري بعد الفيديو</span><span class="en">Viewers decide to download or buy after watching</span></td></tr><tr><td><span class="ar">ألعاب موبايل خفيفة</span><span class="en">Light mobile games</span></td><td><span class="ar">ألعاب للموبايلات الضعيفة</span><span class="en">Games for weak phones</span></td><td><span class="ar">جمهور كبير ومحتاج للفكرة دي</span><span class="en">Big audience with a real need</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">ابدأ إزاي في المجال ده</span><span class="en">How to start in this niche</span></div>
+ <ol class="how"><li><span class="ar">اختار لعبة أو اتنين بتحبهم وبتلعبهم كويس.</span><span class="en">Pick one or two games you love and play well.</span></li><li><span class="ar">سجّل الشاشة بـ OBS على الكمبيوتر، أو بتسجيل الشاشة الجاهز في الموبايل.</span><span class="en">Record with OBS on PC, or use the built-in screen recorder on your phone.</span></li><li><span class="ar">ركّز على صوتك وتعليقك أكتر من مستوى لعبك. الناس بتحب الشخصية.</span><span class="en">Focus on your voice and commentary more than your skill. People love personality.</span></li><li><span class="ar">قص أحلى لحظة من كل فيديو ونزّلها شورتس.</span><span class="en">Cut the best moment of each video into a Short.</span></li></ol>
+ <div class="tt"><span class="ar">الأدوات</span><span class="en">Tools</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">الشغلانة</span><span class="en">Task</span></th><th><span class="ar">الأداة</span><span class="en">Tool</span></th><th><span class="ar">التكلفة</span><span class="en">Cost</span></th></tr></thead><tbody><tr><td><span class="ar">تسجيل اللعب</span><span class="en">Recording</span></td><td><span class="ar">OBS Studio / تسجيل الشاشة</span><span class="en">OBS Studio / screen recorder</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">الصوت</span><span class="en">Audio</span></td><td><span class="ar">سماعة بميكروفون أو لاڤالير</span><span class="en">Headset mic or lavalier</span></td><td><span class="ar">رخيص</span><span class="en">Cheap</span></td></tr><tr><td><span class="ar">المونتاج</span><span class="en">Editing</span></td><td><span class="ar">CapCut</span><span class="en">CapCut</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">الصور المصغرة</span><span class="en">Thumbnails</span></td><td><span class="ar">Canva</span><span class="en">Canva</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">إزاي تكسب من المجال ده</span><span class="en">How you earn in this niche</span></div>
+ <ul class="earn"><li><span class="ar">رعايات من شركات ألعاب وتطبيقات.</span><span class="en">Sponsorships from game and app companies.</span></li><li><span class="ar">لينكات عمولة لأجهزة وإكسسوارات الألعاب.</span><span class="en">Affiliate links for gaming gear and accessories.</span></li><li><span class="ar">سوبر ثانكس وتبرعات في البث المباشر.</span><span class="en">Super Thanks and donations during live streams.</span></li><li><span class="ar">إعلانات AdSense بعد ما تتقبل في البرنامج.</span><span class="en">AdSense ads once you join the Partner Program.</span></li></ul>
+ <div class="tt"><span class="ar">أخطاء لازم تتجنبها</span><span class="en">Mistakes to avoid</span></div>
+ <ul class="mist"><li><span class="ar">تقليد قناة كبيرة بالحرف بدل ما يبقى ليك أسلوبك.</span><span class="en">Copying a big channel instead of finding your own style.</span></li><li><span class="ar">مقدمة طويلة قبل ما اللعب يبدأ.</span><span class="en">A long intro before the gameplay starts.</span></li><li><span class="ar">صوت وحش. المشاهد بيسامح الصورة بس مش الصوت.</span><span class="en">Bad audio. Viewers forgive the picture, not the sound.</span></li><li><span class="ar">موسيقى بحقوق نشر ممكن تعملك مشاكل. استخدم موسيقى مسموحة.</span><span class="en">Copyrighted music can cause problems. Use music you're allowed to use.</span></li></ul>
+ <div class="tt"><span class="ar">أول ٥ فيديوهات ليك</span><span class="en">Your first 5 videos</span></div>
+ <ul class="plan"><li><span class="ar">٥ حيل في لعبتك المفضلة</span><span class="en">5 tricks in your favorite game</span></li><li><span class="ar">مراجعة سريعة للعبة جديدة</span><span class="en">A quick review of a new game</span></li><li><span class="ar">أحسن لحظات مضحكة</span><span class="en">Funniest moments</span></li><li><span class="ar">أحسن إعدادات للعبة</span><span class="en">Best settings for a game</span></li><li><span class="ar">مقارنة بين لعبتين</span><span class="en">Comparing two games</span></li></ul>
+</div></section>
+<section class="niche alt" id="marketing"><div class="wrap">
+ <div class="nh"><div class="ni">📈</div><div><div class="nn"><span class="ar">القسم 2 من ٣</span><span class="en">Section 2 of 3</span></div><h2><span class="ar">قسم التسويق</span><span class="en">Marketing</span></h2><p><span class="ar">جمهوره أصغر، بس الرعايات والإعلانات فيه بتدفع أعلى.</span><span class="en">A smaller audience, but sponsors and ads pay more.</span></p></div></div>
+ <div class="two">
+  <div class="card main"><h3><span class="ar">إيه هو المجال ده؟</span><span class="en">What is this niche?</span></h3><p><span class="ar">بتشرح للناس إزاي تسوّق منتج، أو تبني براند، أو تبدأ مشروع صغير. الناس بتتفرج عشان تتعلم خطوات تطبيقية مش كلام نظري.</span><span class="en">You teach people how to market a product, build a brand or start a small project. People watch to learn practical steps, not theory.</span></p></div>
+  <div class="card"><h3><span class="ar">مين بيتفرج؟</span><span class="en">Who watches?</span></h3><p><span class="ar">طلبة وشباب بيدوروا على شغل أو فري لانس، أو عايزين يبدأوا مشروع صغير.</span><span class="en">Students and young people looking for work or freelancing, or wanting to start a small project.</span></p></div>
+ </div>
+ <div class="tt"><span class="ar">أنواع الفيديوهات اللي تعملها</span><span class="en">Video types you can make</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">النوع</span><span class="en">Type</span></th><th><span class="ar">مثال لعنوان</span><span class="en">Example title</span></th><th><span class="ar">ليه بينجح؟</span><span class="en">Why it works</span></th></tr></thead><tbody><tr><td><span class="ar">شرح مفاهيم</span><span class="en">Explaining concepts</span></td><td><span class="ar">يعني إيه تسويق رقمي؟</span><span class="en">What is digital marketing?</span></td><td><span class="ar">ناس كتير بتبحث عن الأساسيات</span><span class="en">Many people search for the basics</span></td></tr><tr><td><span class="ar">تحليل حملات</span><span class="en">Campaign breakdowns</span></td><td><span class="ar">ليه الإعلان ده نجح؟</span><span class="en">Why did this ad work?</span></td><td><span class="ar">بتعلّم من أمثلة حقيقية</span><span class="en">You teach from real examples</span></td></tr><tr><td><span class="ar">أدوات</span><span class="en">Tools</span></td><td><span class="ar">٥ أدوات مجانية للتسويق</span><span class="en">5 free marketing tools</span></td><td><span class="ar">فايدة سريعة تتحفظ وتتشارك</span><span class="en">Quick value people save and share</span></td></tr><tr><td><span class="ar">تجارب</span><span class="en">Experiments</span></td><td><span class="ar">جربت أعلن بميزانية صغيرة، وده اللي حصل</span><span class="en">I tried a small ad budget, here's what happened</span></td><td><span class="ar">تجربة حقيقية بتبني ثقة</span><span class="en">A real experiment builds trust</span></td></tr><tr><td><span class="ar">شغل ومهارات</span><span class="en">Jobs and skills</span></td><td><span class="ar">إزاي تبدأ فري لانس في التسويق</span><span class="en">How to start freelancing in marketing</span></td><td><span class="ar">الشباب مهتم بالشغل</span><span class="en">Young people care about work</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">ابدأ إزاي في المجال ده</span><span class="en">How to start in this niche</span></div>
+ <ol class="how"><li><span class="ar">اتعلم الأساسيات الأول بكورسات مجانية. لازم تفهم اللي بتشرحه.</span><span class="en">Learn the basics first with free courses. You must understand what you teach.</span></li><li><span class="ar">اختار مجال فرعي: سوشيال ميديا، أو محتوى، أو إعلانات مدفوعة.</span><span class="en">Pick a sub-focus: social media, content or paid ads.</span></li><li><span class="ar">اعمل تجارب صغيرة بنفسك على صفحة أو مشروع صغير وصوّرها.</span><span class="en">Run small experiments on a page or a small project and film them.</span></li><li><span class="ar">اعرض شاشتك وأرقامك وأمثلة حقيقية بدل الكلام النظري.</span><span class="en">Show your screen, numbers and real examples instead of theory.</span></li></ol>
+ <div class="tt"><span class="ar">الأدوات</span><span class="en">Tools</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">الشغلانة</span><span class="en">Task</span></th><th><span class="ar">الأداة</span><span class="en">Tool</span></th><th><span class="ar">التكلفة</span><span class="en">Cost</span></th></tr></thead><tbody><tr><td><span class="ar">تصميم</span><span class="en">Design</span></td><td><span class="ar">Canva</span><span class="en">Canva</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">أفكار وبحث</span><span class="en">Research</span></td><td><span class="ar">Google Trends</span><span class="en">Google Trends</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">إدارة السوشيال</span><span class="en">Social management</span></td><td><span class="ar">Meta Business Suite</span><span class="en">Meta Business Suite</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">المونتاج</span><span class="en">Editing</span></td><td><span class="ar">CapCut</span><span class="en">CapCut</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">إزاي تكسب من المجال ده</span><span class="en">How you earn in this niche</span></div>
+ <ul class="earn"><li><span class="ar">رعايات من أدوات وشركات (دي أعلى فلوس في المجال).</span><span class="en">Sponsorships from tools and companies (usually the best pay here).</span></li><li><span class="ar">عمولة على أدوات وكورسات بتنصح بيها.</span><span class="en">Affiliate commission on tools and courses you recommend.</span></li><li><span class="ar">خدمات بتقدمها بنفسك زي إدارة صفحات أو استشارات.</span><span class="en">Services you offer yourself, like page management or consulting.</span></li><li><span class="ar">كورس أو منتج خاص بيك.</span><span class="en">Your own course or product.</span></li><li><span class="ar">إعلانات AdSense.</span><span class="en">AdSense ads.</span></li></ul>
+ <div class="tt"><span class="ar">أخطاء لازم تتجنبها</span><span class="en">Mistakes to avoid</span></div>
+ <ul class="mist"><li><span class="ar">وعود بالمليون من أول شهر. الناس بتحس إنها كدب.</span><span class="en">Promising millions in the first month. People sense it's fake.</span></li><li><span class="ar">تشرح حاجة ما جربتهاش بنفسك.</span><span class="en">Teaching something you've never tried.</span></li><li><span class="ar">فيديوهات نظرية طويلة من غير أمثلة.</span><span class="en">Long theory videos with no examples.</span></li><li><span class="ar">تخبي النتايج الوحشة. الناس بتحترم الصراحة.</span><span class="en">Hiding bad results. People respect honesty.</span></li></ul>
+ <div class="tt"><span class="ar">أول ٥ فيديوهات ليك</span><span class="en">Your first 5 videos</span></div>
+ <ul class="plan"><li><span class="ar">يعني إيه تسويق رقمي؟</span><span class="en">What is digital marketing?</span></li><li><span class="ar">٥ أدوات مجانية للتسويق</span><span class="en">5 free marketing tools</span></li><li><span class="ar">تحليل إعلان مشهور</span><span class="en">Breaking down a famous ad</span></li><li><span class="ar">إزاي تعمل صفحة لمشروع صغير</span><span class="en">How to set up a page for a small project</span></li><li><span class="ar">أخطاء المبتدئين في السوشيال ميديا</span><span class="en">Beginner mistakes on social media</span></li></ul>
+</div></section>
+<section class="niche" id="tech"><div class="wrap">
+ <div class="nh"><div class="ni">💻</div><div><div class="nn"><span class="ar">القسم 3 من ٣</span><span class="en">Section 3 of 3</span></div><h2><span class="ar">قسم التقنية</span><span class="en">Tech</span></h2><p><span class="ar">الناس بتدور عليه طول الوقت، والفيديو الواحد بيعيش سنين.</span><span class="en">People search for it all the time and one video can live for years.</span></p></div></div>
+ <div class="two">
+  <div class="card main"><h3><span class="ar">إيه هو المجال ده؟</span><span class="en">What is this niche?</span></h3><p><span class="ar">بتشرح أو بتراجع موبايلات وسماعات وبرامج وتطبيقات AI بشكل بسيط. الناس بتشوفك قبل ما تشتري أو تتعلم أداة جديدة.</span><span class="en">You explain or review phones, headphones, software and AI apps in a simple way. People watch you before buying or learning a new tool.</span></p></div>
+  <div class="card"><h3><span class="ar">مين بيتفرج؟</span><span class="en">Who watches?</span></h3><p><span class="ar">طلبة بيدوروا على جهاز أو تطبيق يساعدهم في المذاكرة أو الألعاب أو الشغل.</span><span class="en">Students looking for a device or app that helps with study, gaming or work.</span></p></div>
+ </div>
+ <div class="tt"><span class="ar">أنواع الفيديوهات اللي تعملها</span><span class="en">Video types you can make</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">النوع</span><span class="en">Type</span></th><th><span class="ar">مثال لعنوان</span><span class="en">Example title</span></th><th><span class="ar">ليه بينجح؟</span><span class="en">Why it works</span></th></tr></thead><tbody><tr><td><span class="ar">مراجعات</span><span class="en">Reviews</span></td><td><span class="ar">مراجعة موبايل بعد أسبوع استخدام</span><span class="en">A phone review after one week</span></td><td><span class="ar">الناس بتدور قبل الشراء</span><span class="en">People search before buying</span></td></tr><tr><td><span class="ar">مقارنات</span><span class="en">Comparisons</span></td><td><span class="ar">أنهي أحسن، ده ولا ده؟</span><span class="en">Which is better, this or that?</span></td><td><span class="ar">سؤال مباشر والناس عايزة إجابة</span><span class="en">A direct question people want answered</span></td></tr><tr><td><span class="ar">شروحات</span><span class="en">Tutorials</span></td><td><span class="ar">تطبيقات AI تساعدك في المذاكرة</span><span class="en">AI apps that help you study</span></td><td><span class="ar">الطلبة بتدور على أدوات تفيدهم</span><span class="en">Students look for helpful tools</span></td></tr><tr><td><span class="ar">نصايح</span><span class="en">Tips</span></td><td><span class="ar">١٠ إعدادات مخفية في موبايلك</span><span class="en">10 hidden settings on your phone</span></td><td><span class="ar">بسيط وسهل يتشاف لآخره</span><span class="en">Simple and easy to watch to the end</span></td></tr><tr><td><span class="ar">أخبار</span><span class="en">News</span></td><td><span class="ar">أهم أخبار التقنية الأسبوع ده</span><span class="en">This week's top tech news</span></td><td><span class="ar">محتوى متجدد والناس بترجع تتابعه</span><span class="en">Fresh content that makes people come back</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">ابدأ إزاي في المجال ده</span><span class="en">How to start in this niche</span></div>
+ <ol class="how"><li><span class="ar">ابدأ بحاجات معاك فعلاً: موبايلك والتطبيقات اللي بتستخدمها.</span><span class="en">Start with what you already own: your phone and the apps you use.</span></li><li><span class="ar">صوّر الشاشة والجهاز بإضاءة كويسة. نور الشباك بيكفي.</span><span class="en">Film the screen and device in good light. Window light is enough.</span></li><li><span class="ar">اشرح بنقاط واضحة، وقول العيوب مع المميزات.</span><span class="en">Explain in clear points and mention drawbacks along with benefits.</span></li><li><span class="ar">اكتب العنوان بالسؤال اللي الناس بتبحث بيه.</span><span class="en">Write the title as the question people actually search.</span></li></ol>
+ <div class="tt"><span class="ar">الأدوات</span><span class="en">Tools</span></div>
+ <div class="tw"><table><thead><tr><th><span class="ar">الشغلانة</span><span class="en">Task</span></th><th><span class="ar">الأداة</span><span class="en">Tool</span></th><th><span class="ar">التكلفة</span><span class="en">Cost</span></th></tr></thead><tbody><tr><td><span class="ar">التصوير</span><span class="en">Filming</span></td><td><span class="ar">موبايلك + ترايبود</span><span class="en">Your phone + tripod</span></td><td><span class="ar">رخيص</span><span class="en">Cheap</span></td></tr><tr><td><span class="ar">الإضاءة</span><span class="en">Lighting</span></td><td><span class="ar">نور الشباك أو لمبة رخيصة</span><span class="en">Window light or a cheap lamp</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">تسجيل الشاشة</span><span class="en">Screen recording</span></td><td><span class="ar">المدمج في الموبايل</span><span class="en">Built-in phone recorder</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr><tr><td><span class="ar">المونتاج</span><span class="en">Editing</span></td><td><span class="ar">CapCut</span><span class="en">CapCut</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr></tbody></table></div>
+ <div class="tt"><span class="ar">إزاي تكسب من المجال ده</span><span class="en">How you earn in this niche</span></div>
+ <ul class="earn"><li><span class="ar">عمولة على الأجهزة والإكسسوارات اللي بتراجعها.</span><span class="en">Affiliate commission on devices and accessories you review.</span></li><li><span class="ar">رعايات من براندات تقنية.</span><span class="en">Sponsorships from tech brands.</span></li><li><span class="ar">إعلانات AdSense، وفيديوهات المراجعات بتفضل تجيب مشاهدات مدة طويلة.</span><span class="en">AdSense ads, and review videos keep earning views for a long time.</span></li><li><span class="ar">خدمات بتقدمها زي استشارات شراء أو مساعدة في تطبيقات.</span><span class="en">Services like buying advice or help with apps.</span></li></ul>
+ <div class="tt"><span class="ar">أخطاء لازم تتجنبها</span><span class="en">Mistakes to avoid</span></div>
+ <ul class="mist"><li><span class="ar">مراجعة جهاز من غير ما تجربه فعلاً.</span><span class="en">Reviewing a device you never really used.</span></li><li><span class="ar">مدح كل حاجة. الناس بتفقد ثقتها فيك.</span><span class="en">Praising everything. People lose trust in you.</span></li><li><span class="ar">إضاءة أو صوت ضعيف.</span><span class="en">Weak lighting or sound.</span></li><li><span class="ar">معلومات قديمة. راجع المواصفات والأسعار قبل النشر.</span><span class="en">Outdated info. Check specs and prices before publishing.</span></li></ul>
+ <div class="tt"><span class="ar">أول ٥ فيديوهات ليك</span><span class="en">Your first 5 videos</span></div>
+ <ul class="plan"><li><span class="ar">تطبيقات مفيدة للطلبة</span><span class="en">Useful apps for students</span></li><li><span class="ar">١٠ إعدادات مخفية في الموبايل</span><span class="en">10 hidden phone settings</span></li><li><span class="ar">مراجعة حاجة بتستخدمها فعلاً</span><span class="en">Review something you actually use</span></li><li><span class="ar">مقارنة بين تطبيقين</span><span class="en">Comparing two apps</span></li><li><span class="ar">إزاي تسرّع موبايلك</span><span class="en">How to speed up your phone</span></li></ul>
+</div></section>
+<section class="alt" id="steps"><div class="wrap">
+ <h2><span class="ar">خطواتك من الصفر</span><span class="en">Your steps from zero</span></h2>
+ <p class="sub"><span class="ar">امشي بالترتيب ده ومتقفزش خطوة.</span><span class="en">Follow the order and don't skip steps.</span></p>
+ <div class="tt"><span class="ar">كلمات لازم تفهمها الأول</span><span class="en">Words you need to know first</span></div>
+ <div class="tw" style="margin-bottom:34px"><table><thead><tr><th><span class="ar">الكلمة</span><span class="en">Term</span></th><th><span class="ar">يعني إيه؟</span><span class="en">What it means</span></th><th><span class="ar">ليه مهمة؟</span><span class="en">Why it matters</span></th></tr></thead><tbody><tr><td><span class="ar">مشترك</span><span class="en">Subscriber</span></td><td><span class="ar">حد ضغط اشتراك عشان يشوف فيديوهاتك الجديدة.</span><span class="en">Someone who pressed subscribe to see your new videos.</span></td><td><span class="ar">شرط أساسي للربح.</span><span class="en">A core requirement for earning.</span></td></tr><tr><td><span class="ar">ساعات المشاهدة</span><span class="en">Watch hours</span></td><td><span class="ar">مجموع الوقت اللي الناس قضّته بتتفرج على فيديوهاتك.</span><span class="en">The total time people spent watching your videos.</span></td><td><span class="ar">شرط للربح، وبتدل إن الناس بتحب المحتوى.</span><span class="en">A requirement for earning, and proof people like your content.</span></td></tr><tr><td><span class="ar">نسبة النقر (CTR)</span><span class="en">Click rate (CTR)</span></td><td><span class="ar">من كل ١٠٠ واحد شافوا الصورة، كام واحد داس.</span><span class="en">Out of every 100 people who saw the thumbnail, how many clicked.</span></td><td><span class="ar">بتقيس قوة العنوان والصورة.</span><span class="en">It measures how strong your title and thumbnail are.</span></td></tr><tr><td><span class="ar">متوسط مدة المشاهدة</span><span class="en">Average view duration</span></td><td><span class="ar">الناس بتفضل كام من الفيديو قبل ما تسيبه.</span><span class="en">How much of the video people watch before leaving.</span></td><td><span class="ar">كل ما زاد، يوتيوب بيرشّح الفيديو لناس أكتر.</span><span class="en">The higher it is, the more YouTube recommends the video.</span></td></tr><tr><td><span class="ar">الشورتس</span><span class="en">Shorts</span></td><td><span class="ar">فيديو رأسي أقل من دقيقة.</span><span class="en">A vertical video under one minute.</span></td><td><span class="ar">بيجيب مشتركين جداد بسرعة.</span><span class="en">It brings new subscribers fast.</span></td></tr><tr><td><span class="ar">AdSense</span><span class="en">AdSense</span></td><td><span class="ar">خدمة جوجل اللي بتدفعلك فلوس الإعلانات.</span><span class="en">Google's service that pays you for ads.</span></td><td><span class="ar">من غيرها مفيش ربح من الإعلانات.</span><span class="en">Without it there is no ad revenue.</span></td></tr></tbody></table></div>
+ <div class="steps">
+  <div class="step"><div><h3><span class="ar">حدد جمهورك</span><span class="en">Define your audience</span></h3><p><span class="ar">قبل ما تصوّر، اعرف بتكلم مين. اختار شخص واحد في دماغك، مثلاً طالب في أولى جامعة بيحب الألعاب ومعاه موبايل متوسط. وقبل كل فيديو اسأل نفسك: ده هيفيده في إيه؟</span><span class="en">Before filming, know who you're talking to. Picture one person, for example a first-year university student who loves games and has an average phone. Before every video ask: how does this help them?</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">فيديو «أحسن ٥ ألعاب خفيفة على الموبايلات الضعيفة» بيخاطب ناس حقيقيين.</span><span class="en">A video called “5 best light games for weak phones” speaks to real people.</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">تعمل محتوى «لكل الناس». وقتها محدش بيحس إنه موجّه ليه.</span><span class="en">Making content “for everyone”. Then nobody feels it's for them.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">جهّز القناة</span><span class="en">Set up the channel</span></h3><p><span class="ar">افتح القناة من حساب جوجل. اختار اسم قصير من كلمتين أو تلاتة وسهل في النطق. حط صورة بروفايل واضحة وغلاف، واكتب في الوصف جملة تقول القناة بتقدم إيه وبتنزل إمتى.</span><span class="en">Create the channel from a Google account. Pick a short name of two or three easy words. Add a clear profile picture and banner, and write one line in the description saying what you post and when.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">الوصف: «شروحات تقنية بسيطة للطلبة، فيديو جديد كل سبت».</span><span class="en">Description: “Simple tech explainers for students, new video every Saturday.”</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">اسم صعب في الكتابة، أو بتغيّره كل شوية.</span><span class="en">A name that's hard to type, or one you keep changing.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">خطّط لأول ١٠ فيديوهات</span><span class="en">Plan your first 10 videos</span></h3><p><span class="ar">اكتب ١٥ فكرة قبل ما تبدأ. الأفكار الكويسة بتيجي من أسئلة الناس: اكتب كلمة في بحث يوتيوب وشوف الاقتراحات اللي بتظهر تحتها. بعد كده صوّر أول فيديو وانزله حتى لو مش مثالي.</span><span class="en">Write 15 ideas before you start. Good ideas come from what people ask: type a word in YouTube search and look at the suggestions under it. Then film your first video and publish it even if it isn't perfect.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">اكتب «أحسن لعبة» في البحث وشوف الاقتراحات. دي حاجات الناس بتدور عليها فعلاً.</span><span class="en">Type “best game” in search and check the suggestions. That's what people really look for.</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">تأجّل أول فيديو لحد ما كل حاجة تبقى مثالية.</span><span class="en">Delaying the first video until everything is perfect.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">العنوان والصورة المصغرة والبداية</span><span class="en">Title, thumbnail and hook</span></h3><p><span class="ar">العنوان والصورة هما اللي بيخلّوا الناس تدوس. العنوان يوعد بفايدة أو يعمل فضول. الصورة فيها وش بتعبير واضح وكلمتين بس. وأول ٥ ثواني في الفيديو تقول للمشاهد هيطلع بإيه لو كمّل.</span><span class="en">The title and thumbnail make people click. The title promises a benefit or sparks curiosity. The thumbnail has a face with a clear expression and two words max. The first 5 seconds tell viewers what they'll get if they stay.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">بدل «فيديو عن الماوس» اكتب «جربت ماوس بـ٣٠٠ جنيه، هل يستاهل؟».</span><span class="en">Instead of “A video about a mouse” write “I tried a $10 mouse, is it worth it?”</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">عنوان كدب. الناس بتسيب الفيديو بسرعة ويوتيوب بيقلل ظهوره.</span><span class="en">A misleading title. Viewers leave fast and YouTube shows the video less.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">استخدم الشورتس</span><span class="en">Use Shorts</span></h3><p><span class="ar">الشورتس فيديو رأسي أقل من دقيقة، وبيوصل لناس جداد بسرعة. خد أحلى جزء من الفيديو الطويل ونزّله شورتس، وقول في آخره إن الفيديو كامل على القناة.</span><span class="en">Shorts are vertical videos under a minute that reach new people fast. Take the best part of a long video, post it as a Short, and say at the end that the full video is on your channel.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">٤٥ ثانية فيها أحسن حركة في اللعبة، وفي آخرها «الشرح كامل على القناة».</span><span class="en">45 seconds of your best game move, ending with “full breakdown on the channel”.</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">شورتس عشوائي من غير فكرة ولا ربط بالقناة.</span><span class="en">Random Shorts with no idea and no link to your channel.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">التزم بجدول</span><span class="en">Stick to a schedule</span></h3><p><span class="ar">اختار جدول تقدر تلتزم بيه بجد. فيديو كل أسبوع أحسن من ٥ فيديوهات في أسبوع وبعدين اختفاء. اكتب الميعاد في الوصف وحطه في تقويم موبايلك.</span><span class="en">Pick a schedule you can really keep. One video a week beats five videos in one week and then disappearing. Put the day in the description and in your phone calendar.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">كل سبت فيديو طويل، وتلات شورتس خلال الأسبوع.</span><span class="en">A long video every Saturday plus three Shorts during the week.</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">تبدأ بـ٣ فيديوهات في الأسبوع وتسيب بعد أسبوعين.</span><span class="en">Starting with 3 videos a week and quitting after two weeks.</span></p></div></div>
+  <div class="step"><div><h3><span class="ar">حلّل الأرقام واتفاعل مع الناس</span><span class="en">Read your numbers and engage</span></h3><p><span class="ar">بعد كل فيديو بص على تلات أرقام: نسبة النقر على الصورة، ومتوسط مدة المشاهدة، والثانية اللي الناس بتسيب عندها. ورد على التعليقات واسألهم عايزين فيديو إيه الجاي.</span><span class="en">After each video check three numbers: click rate on the thumbnail, average view duration, and the second where people leave. Reply to comments and ask what video they want next.</span></p><p class="ex"><b><span class="ar">مثال:</span><span class="en">Example:</span></b> <span class="ar">لو الناس بتسيب في أول ١٠ ثواني، قصّر المقدمة في الفيديو الجاي.</span><span class="en">If people leave in the first 10 seconds, shorten the intro next time.</span></p><p class="bad"><b><span class="ar">غلطة شائعة:</span><span class="en">Common mistake:</span></b> <span class="ar">تتجاهل الأرقام وتكرر نفس الغلطة.</span><span class="en">Ignoring the numbers and repeating the same mistake.</span></p></div></div>
+ </div>
+
+ <div class="tt"><span class="ar">الأدوات المجانية والرخيصة</span><span class="en">Free and cheap tools</span></div>
+ <div class="tw"><table>
+  <thead><tr><th><span class="ar">الشغلانة</span><span class="en">Task</span></th><th><span class="ar">الأداة</span><span class="en">Tool</span></th><th><span class="ar">التكلفة</span><span class="en">Cost</span></th></tr></thead>
+  <tbody>
+   <tr><td><span class="ar">التصوير</span><span class="en">Filming</span></td><td><span class="ar">موبايلك</span><span class="en">Your phone</span></td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr>
+   <tr><td><span class="ar">الصوت</span><span class="en">Audio</span></td><td><span class="ar">ميكروفون لاڤالير</span><span class="en">Lavalier mic</span></td><td><span class="ar">رخيص</span><span class="en">Cheap</span></td></tr>
+   <tr><td><span class="ar">تسجيل الألعاب</span><span class="en">Game recording</span></td><td>OBS Studio</td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr>
+   <tr><td><span class="ar">المونتاج</span><span class="en">Editing</span></td><td>CapCut / DaVinci Resolve</td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr>
+   <tr><td><span class="ar">الصور المصغرة</span><span class="en">Thumbnails</span></td><td>Canva</td><td><span class="ar">مجاني</span><span class="en">Free</span></td></tr>
+  </tbody></table></div>
+</div></section>
+
+<section id="money"><div class="wrap">
+ <h2><span class="ar">إزاي تحقق الربح؟</span><span class="en">How do you earn?</span></h2>
+ <p class="sub"><span class="ar">أول باب هو برنامج شركاء يوتيوب، وفيه طرق تانية ممكن تبدأ بيها قبله.</span><span class="en">The first door is the YouTube Partner Program, but there are other ways to start earning before it.</span></p>
+ <div class="grid2">
+  <div class="card main"><h3><span class="ar">الشروط الكاملة (إعلانات)</span><span class="en">Full requirements (ads)</span></h3><div class="big"><span class="ar">١٠٠٠ مشترك</span><span class="en">1,000 subs</span></div>
+   <p class="req"><span class="ar"><b>٤٠٠٠ ساعة مشاهدة</b> في ١٢ شهر، أو <b>١٠ مليون مشاهدة شورتس</b> في ٩٠ يوم</span><span class="en"><b>4,000 watch hours</b> in 12 months, or <b>10M Shorts views</b> in 90 days</span></p></div>
+  <div class="card"><h3><span class="ar">المستوى الأول</span><span class="en">Entry tier</span></h3><div class="big"><span class="ar">٥٠٠ مشترك</span><span class="en">500 subs</span></div>
+   <p class="req"><span class="ar"><b>٣٠٠٠ ساعة</b> في ١٢ شهر، أو <b>٣ مليون مشاهدة شورتس</b> في ٩٠ يوم، و٣ فيديوهات منشورة في ٩٠ يوم</span><span class="en"><b>3,000 hours</b> in 12 months, or <b>3M Shorts views</b> in 90 days, plus 3 uploads in 90 days</span></p></div>
+ </div>
+ <div class="note"><span class="ar">⚠️ الأرقام بتتغير. راجع شروط برنامج الشركاء في مساعدة يوتيوب قبل ما تعتمد عليها.</span><span class="en">⚠️ Numbers change. Check the Partner Program terms on YouTube Help before relying on them.</span></div>
+
+ <div class="tt"><span class="ar">طرق الربح</span><span class="en">Ways to earn</span></div>
+ <div class="tw"><table>
+  <thead><tr><th><span class="ar">الطريقة</span><span class="en">Method</span></th><th><span class="ar">بتبدأ إمتى؟</span><span class="en">When can you start?</span></th><th><span class="ar">الفكرة</span><span class="en">How it works</span></th></tr></thead>
+  <tbody>
+   <tr><td><span class="ar">إعلانات AdSense</span><span class="en">AdSense ads</span></td><td><span class="ar">بعد قبولك في البرنامج</span><span class="en">After Partner Program approval</span></td><td><span class="ar">فلوس على المشاهدات</span><span class="en">Paid per views</span></td></tr>
+   <tr><td><span class="ar">رعايات البراندات</span><span class="en">Brand sponsorships</span></td><td><span class="ar">من أول ما يبقى عندك جمهور متفاعل</span><span class="en">Once you have an engaged audience</span></td><td><span class="ar">شركة بتدفعلك تعلن عن منتجها</span><span class="en">A company pays you to promote a product</span></td></tr>
+   <tr><td><span class="ar">التسويق بالعمولة</span><span class="en">Affiliate links</span></td><td><span class="ar">من أول فيديو</span><span class="en">From video one</span></td><td><span class="ar">لينك تحت الفيديو ونسبة من كل بيعة</span><span class="en">Link under the video, commission per sale</span></td></tr>
+   <tr><td><span class="ar">اشتراكات وسوبر ثانكس</span><span class="en">Memberships and Super Thanks</span></td><td><span class="ar">بعد ٥٠٠ مشترك</span><span class="en">After 500 subs</span></td><td><span class="ar">المتابعين بيدعموك مباشرة</span><span class="en">Fans support you directly</span></td></tr>
+   <tr><td><span class="ar">منتجاتك الخاصة</span><span class="en">Your own products</span></td><td><span class="ar">في أي وقت</span><span class="en">Anytime</span></td><td><span class="ar">كورس أو ميرش أو خدمة</span><span class="en">A course, merch or a service</span></td></tr>
+  </tbody></table></div>
+</div></section>
+
+<section class="alt" id="plan30"><div class="wrap">
+ <h2><span class="ar">خطة أول ٣٠ يوم</span><span class="en">Your first 30 days</span></h2>
+ <div class="tw"><table>
+  <thead><tr><th><span class="ar">الأسبوع</span><span class="en">Week</span></th><th><span class="ar">اللي تعمله</span><span class="en">What to do</span></th><th><span class="ar">الهدف</span><span class="en">Goal</span></th></tr></thead>
+  <tbody>
+   <tr><td><span class="ar">١</span><span class="en">1</span></td><td><span class="ar">اختار النوع والجمهور، جهّز القناة، واكتب ١٥ فكرة</span><span class="en">Pick niche and audience, set up the channel, write 15 ideas</span></td><td><span class="ar">قناة جاهزة</span><span class="en">Channel ready</span></td></tr>
+   <tr><td><span class="ar">٢</span><span class="en">2</span></td><td><span class="ar">انزل أول فيديوهين و٣ شورتس</span><span class="en">Publish 2 videos and 3 Shorts</span></td><td><span class="ar">أول محتوى</span><span class="en">First content live</span></td></tr>
+   <tr><td><span class="ar">٣</span><span class="en">3</span></td><td><span class="ar">راجع الإحصائيات وحسّن العناوين والصور</span><span class="en">Review analytics, improve titles and thumbnails</span></td><td><span class="ar">نسبة نقر أعلى</span><span class="en">Higher click rate</span></td></tr>
+   <tr><td><span class="ar">٤</span><span class="en">4</span></td><td><span class="ar">كرر اللي نجح ورد على التعليقات وثبّت جدولك</span><span class="en">Repeat what worked, reply to comments, lock your schedule</span></td><td><span class="ar">روتين ثابت</span><span class="en">Steady routine</span></td></tr>
+  </tbody></table></div>
+</div></section>
+
+<section id="builder" class="alt"><div class="wrap">
+ <h2><span class="ar">اصنع خطتك بنفسك</span><span class="en">Build your own plan</span></h2>
+ <p class="sub"><span class="ar">اختار نوع محتواك ومستواك ووقتك وهدفك، واضغط الزر. هتطلعلك خطة ٣٠ يوم متظبطة عليك، وتقدر تحمّلها PDF أو تبعتها على واتساب.</span><span class="en">Choose your content type, level, time and goal, then press the button. You get a 30-day plan made for you, and you can download it as a PDF or send it on WhatsApp.</span></p>
+ <form class="card sg" id="mpform"><fieldset class="grp"><legend><span class="ar">١. نوع المحتوى</span><span class="en">1. Content type</span></legend><div class="opts"><label class="opt"><input type="radio" name="niche" value="gaming" checked><span>🎮 <span class="ar">ألعاب</span><span class="en">Gaming</span></span></label><label class="opt"><input type="radio" name="niche" value="marketing"><span>📈 <span class="ar">تسويق</span><span class="en">Marketing</span></span></label><label class="opt"><input type="radio" name="niche" value="tech"><span>💻 <span class="ar">تقنية</span><span class="en">Tech</span></span></label></div></fieldset><fieldset class="grp"><legend><span class="ar">٢. مستواك دلوقتي</span><span class="en">2. Your level now</span></legend><div class="opts"><label class="opt"><input type="radio" name="level" value="nw" checked><span><span class="ar">مبتدئ ومعنديش قناة</span><span class="en">Beginner, no channel</span></span></label><label class="opt"><input type="radio" name="level" value="st"><span><span class="ar">عندي قناة وبدأت</span><span class="en">Have a channel, just started</span></span></label><label class="opt"><input type="radio" name="level" value="gr"><span><span class="ar">عندي قناة ومشتركين</span><span class="en">Channel with subscribers</span></span></label></div></fieldset><fieldset class="grp"><legend><span class="ar">٣. وقتك في الأسبوع</span><span class="en">3. Your time per week</span></legend><div class="opts"><label class="opt"><input type="radio" name="hours" value="3" checked><span><span class="ar">٣ ساعات</span><span class="en">3 hours</span></span></label><label class="opt"><input type="radio" name="hours" value="6"><span><span class="ar">٦ ساعات</span><span class="en">6 hours</span></span></label><label class="opt"><input type="radio" name="hours" value="10"><span><span class="ar">١٠ ساعات أو أكتر</span><span class="en">10+ hours</span></span></label></div></fieldset><fieldset class="grp"><legend><span class="ar">٤. هدفك الأساسي</span><span class="en">4. Your main goal</span></legend><div class="opts"><label class="opt"><input type="radio" name="goal" value="subs" checked><span><span class="ar">زيادة المشتركين</span><span class="en">Grow subscribers</span></span></label><label class="opt"><input type="radio" name="goal" value="money"><span><span class="ar">أبدأ الربح</span><span class="en">Start earning</span></span></label><label class="opt"><input type="radio" name="goal" value="brand"><span><span class="ar">بناء هوية وأسلوب</span><span class="en">Build identity and style</span></span></label></div></fieldset>
+  <button class="dl" type="submit">✨ <span class="ar">اصنع خطتي</span><span class="en">Make my plan</span></button>
+ </form>
+ <div id="myplan" class="mpout"></div>
+ <div id="mpactions" class="mpact" hidden>
+  <button class="dl" type="button" data-pdf="myplan" data-name="my-plan">⬇ <span class="ar">تحميل خطتي PDF</span><span class="en">Download my plan PDF</span></button>
+  <a class="btn wa" data-wa="plan" href="https://wa.me/201128078370" target="_blank" rel="noopener">💬 <span class="ar">ابعت خطتي على واتساب</span><span class="en">Send my plan on WhatsApp</span></a>
+ </div>
+</div></section>
+<section id="coach"><div class="wrap">
+ <div class="nh"><div class="ni">💬</div><div>
+  <h2><span class="ar">عايز متابعة شخصية؟</span><span class="en">Want personal follow-up?</span></h2>
+  <p><span class="ar">فيه اشتراكات شهرية للمتابعة الشخصية لقناتك. تواصل معنا على واتساب وهنعرّفك بالتفاصيل.</span><span class="en">We offer monthly subscriptions for personal follow-up of your channel. Contact us on WhatsApp and we will give you the details.</span></p>
+  <p class="wanum"><bdi dir="ltr">📞 01128078370</bdi></p>
+  <a class="btn wa" data-wa="default" href="https://wa.me/201128078370" target="_blank" rel="noopener">💬 <span class="ar">تواصل معنا على واتساب</span><span class="en">Contact us on WhatsApp</span></a>
+ </div></div>
+ <div class="chatwrap">
+  <h3><span class="ar">إيه اللي هيحصل لما تدوس على الزر؟</span><span class="en">What happens when you tap the button?</span></h3>
+  <p class="sub" style="margin-bottom:16px"><span class="ar">هيفتحلك واتساب ومعاك رسالة جاهزة، وبعد ما تبعتها هتستقبل رد ترحيبي زي ده:</span><span class="en">WhatsApp opens with a ready message. After you send it, you receive a welcome reply like this:</span></p>
+  <div class="chat" dir="ltr">
+   <div class="chead">💬 WhatsApp · <bdi>01128078370</bdi></div>
+   <div class="bub me" dir="auto"><span class="ar">السلام عليكم، عايز أشترك في خطة المتابعة الشخصية الشهرية. ممكن تعرّفني بالتفاصيل والأسعار؟</span><span class="en">Hello, I would like to subscribe to the monthly personal follow-up plan. Could you share the details and prices?</span></div>
+   <div class="bub them" dir="auto"><span class="ar">أهلاً بيك 👋 شكراً لتواصلك معانا!
+عشان نفيدك أكتر، قولنا:
+١. نوع محتواك (ألعاب / تسويق / تقنية)؟
+٢. عندك قناة؟ لو أيوه ابعتلنا اللينك.
+٣. هدفك إيه دلوقتي؟ (مشتركين / ربح / هوية)
+وهنرد عليك بتفاصيل خطة المتابعة الشخصية والاشتراك الشهري.</span><span class="en">Welcome 👋 Thanks for contacting us!
+To help you better, tell us:
+1. Your content type (gaming / marketing / tech)?
+2. Do you have a channel? If yes, send us the link.
+3. What is your goal right now? (subscribers / earning / identity)
+We will reply with the details of the personal follow-up plan and the monthly subscription.</span></div>
+  </div>
+ </div>
+</div></section>
+<section id="downloads"><div class="wrap">
+ <h2><span class="ar">حمّل خططك PDF</span><span class="en">Download your plans as PDF</span></h2>
+ <p class="sub"><span class="ar">اضغط على الخطة اللي عايزها وهتتحمّل كملف PDF. الملف بيتحمّل بنفس لغة الموقع الحالية، وبالألوان الفاتحة عشان الطباعة.</span><span class="en">Tap the plan you want and it downloads as a PDF. The file uses the site's current language, in light colors so it prints well.</span></p>
+ <div class="niches dls"><div class="card dlc"><div class="ic">🚀</div><h3><span class="ar">خطوات البداية والأدوات</span><span class="en">Start steps and tools</span></h3><p><span class="ar">الـ٧ خطوات وجدول الكلمات والأدوات.</span><span class="en">The 7 steps, glossary and tools.</span></p><button class="dl" type="button" data-pdf="steps" data-name="start-steps">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div><div class="card dlc"><div class="ic">🎮</div><h3><span class="ar">خطة قسم الألعاب</span><span class="en">Gaming plan</span></h3><p><span class="ar">الأفكار والأدوات وأول ٥ فيديوهات.</span><span class="en">Ideas, tools and your first 5 videos.</span></p><button class="dl" type="button" data-pdf="gaming" data-name="gaming-plan">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div><div class="card dlc"><div class="ic">📈</div><h3><span class="ar">خطة قسم التسويق</span><span class="en">Marketing plan</span></h3><p><span class="ar">الأفكار والأدوات وأول ٥ فيديوهات.</span><span class="en">Ideas, tools and your first 5 videos.</span></p><button class="dl" type="button" data-pdf="marketing" data-name="marketing-plan">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div><div class="card dlc"><div class="ic">💻</div><h3><span class="ar">خطة قسم التقنية</span><span class="en">Tech plan</span></h3><p><span class="ar">الأفكار والأدوات وأول ٥ فيديوهات.</span><span class="en">Ideas, tools and your first 5 videos.</span></p><button class="dl" type="button" data-pdf="tech" data-name="tech-plan">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div><div class="card dlc"><div class="ic">💰</div><h3><span class="ar">خطة الربح</span><span class="en">Monetization plan</span></h3><p><span class="ar">شروط الربح وطرق الكسب.</span><span class="en">Requirements and ways to earn.</span></p><button class="dl" type="button" data-pdf="money" data-name="monetization">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div><div class="card dlc"><div class="ic">📅</div><h3><span class="ar">خطة أول ٣٠ يوم</span><span class="en">First 30 days plan</span></h3><p><span class="ar">جدول الأسابيع الأربعة.</span><span class="en">The four-week schedule.</span></p><button class="dl" type="button" data-pdf="plan30" data-name="30-day-plan">⬇ <span class="ar">تحميل PDF</span><span class="en">Download PDF</span></button></div></div>
+ <div class="note" id="pdfnote" hidden></div>
+</div></section>
+<section id="suggest" class="alt"><div class="wrap">
+ <h2><span class="ar">قسم الاقتراحات</span><span class="en">Suggestions</span></h2>
+ <p class="sub"><span class="ar">نفسك نغطي نوع محتوى مش موجود في الموقع؟ اكتبه هنا وهنفكر نضيفه.</span><span class="en">Want us to cover a content type that isn't on the site? Write it here and we'll consider adding it.</span></p>
+ <form class="card sg" id="sgform" novalidate>
+  <label for="sgtype"><span class="ar">نوع المحتوى اللي عايز تضيفه</span><span class="en">Content type you want added</span></label>
+  <input id="sgtype" class="fld" type="text" maxlength="80" autocomplete="off" data-ar="مثال: رياضة، تصميم، طبخ..." data-en="Example: sports, design, cooking...">
+  <div class="sgchips" aria-label="Quick ideas"><button type="button" class="sgchip" data-ar="رياضة" data-en="Sports">🏀 <span class="ar">رياضة</span><span class="en">Sports</span></button><button type="button" class="sgchip" data-ar="تصميم" data-en="Design">🎨 <span class="ar">تصميم</span><span class="en">Design</span></button><button type="button" class="sgchip" data-ar="طبخ" data-en="Cooking">🍳 <span class="ar">طبخ</span><span class="en">Cooking</span></button><button type="button" class="sgchip" data-ar="دراسة" data-en="Studying">📚 <span class="ar">دراسة</span><span class="en">Studying</span></button><button type="button" class="sgchip" data-ar="موسيقى" data-en="Music">🎵 <span class="ar">موسيقى</span><span class="en">Music</span></button><button type="button" class="sgchip" data-ar="أفلام ومسلسلات" data-en="Movies and shows">🎬 <span class="ar">أفلام ومسلسلات</span><span class="en">Movies and shows</span></button></div>
+  <label for="sgwhy"><span class="ar">ليه عايزه؟ وإيه اللي تحب نشرحه فيه؟ (اختياري)</span><span class="en">Why do you want it, and what should we explain? (optional)</span></label>
+  <textarea id="sgwhy" class="fld" rows="4" maxlength="600" data-ar="اكتب اقتراحك هنا..." data-en="Write your suggestion here..."></textarea>
+  <label for="sgname"><span class="ar">اسمك (اختياري)</span><span class="en">Your name (optional)</span></label>
+  <input id="sgname" class="fld" type="text" maxlength="40" autocomplete="name" data-ar="اسمك" data-en="Your name">
+  <button class="dl" type="submit"><span class="ar">ابعت اقتراحك</span><span class="en">Send suggestion</span> ✉️</button>
+  <div class="note" id="sgstatus" role="status" hidden></div>
+ </form>
+ <p class="sgfoot"><span class="ar">💬 رأيك يهمنا</span><span class="en">💬 Your opinion matters to us</span></p>
+</div></section>
+<footer><h2><span class="ar">أول فيديو أحسن من ألف خطة 🚀</span><span class="en">One published video beats a thousand plans 🚀</span></h2>
+<p><span class="ar">ابدأ النهارده، حتى لو مش مثالي.</span><span class="en">Start today, even if it's not perfect.</span></p></footer>
+
+<script>
+(function(){
+ var h=document.documentElement,L=document.getElementById('lang'),T=document.getElementById('theme');
+ function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+ function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+ function lang(l){h.lang=l;h.dir=l==='ar'?'rtl':'ltr';L.textContent=l==='ar'?'EN':'عربي';document.title=l==='ar'?'ابدأ قناتك على يوتيوب وحقق منها فلوس':'Start your YouTube channel and earn from it';set('lang',l)}
+ function theme(t){h.setAttribute('data-theme',t);T.textContent=t==='dark'?'☀️':'🌙';set('theme',t)}
+ L.onclick=function(){lang(h.lang==='ar'?'en':'ar')};
+ T.onclick=function(){theme(h.getAttribute('data-theme')==='dark'?'light':'dark')};
+ lang(get('lang')||'ar');theme(get('theme')||'dark');
+})();
+</script>
+<a class="wafab" data-wa="default" href="https://wa.me/201128078370" target="_blank" rel="noopener" aria-label="WhatsApp 01128078370" title="WhatsApp">💬</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script>
+(function(){
+ var h=document.documentElement;
+ function ar(){return h.lang==='ar'}
+ var q=document.getElementById('yq');
+ function ph(){q.placeholder=q.getAttribute(ar()?'data-ar':'data-en')}
+ ph();new MutationObserver(ph).observe(h,{attributes:true,attributeFilter:['lang']});
+ document.getElementById('ysearch').addEventListener('submit',function(e){
+  e.preventDefault();var v=q.value.trim();
+  window.open(v?'https://www.youtube.com/results?search_query='+encodeURIComponent(v):'https://www.youtube.com','_blank','noopener');
+ });
+ var note=document.getElementById('pdfnote');
+ function say(t){note.textContent=t;note.hidden=false}
+ document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-pdf]');if(!b)return;
+  var src=document.getElementById(b.dataset.pdf);if(!src)return;
+  var old=b.innerHTML;b.disabled=true;b.textContent=ar()?'جاري التجهيز...':'Preparing...';
+  var wrap=document.createElement('div');wrap.className='pdfwrap';
+  var box=document.createElement('div');box.className='pdfbox';box.setAttribute('data-theme','light');box.dir=h.dir;
+  var head=document.createElement('div');head.className='pdfhead';
+  head.textContent='▶ '+(ar()?'خطة يوتيوب':'YouTube Plan');
+  box.appendChild(head);box.appendChild(src.cloneNode(true));wrap.appendChild(box);document.body.appendChild(wrap);
+  function done(){wrap.remove();b.disabled=false;b.innerHTML=old}
+  var name=b.dataset.name+(ar()?'-ar':'-en')+'.pdf';
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){
+   if(window.html2pdf){
+    return html2pdf().set({margin:[8,6,8,6],filename:name,image:{type:'jpeg',quality:.95},
+     html2canvas:{scale:1.6,useCORS:true,backgroundColor:'#ffffff',scrollY:0},
+     jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+     pagebreak:{mode:['css','legacy'],avoid:['tr','.card','.step','li','.nh']}}).from(box).save().then(done);
+   }
+   say(ar()?'مكتبة الـ PDF مش متاحة دلوقتي (محتاجة إنترنت). هتفتح نافذة الطباعة، اختار "حفظ كـ PDF".':'The PDF library is unavailable right now (it needs internet). The print window will open: choose "Save as PDF".');
+   window.print();done();
+  }).catch(function(){done();say(ar()?'حصلت مشكلة في تجهيز الملف. جرّب تاني.':'Something went wrong preparing the file. Please try again.')});
+ });
+})();
+</script>
+<script>
+(function(){
+ // To receive suggestions by email, put your address here, e.g. 'you@example.com'
+ var SUGGEST_EMAIL='';
+ var h=document.documentElement;
+ function ar(){return h.lang==='ar'}
+ function ph(){document.querySelectorAll('[data-ar][data-en]').forEach(function(el){if(el.placeholder!==undefined&&(el.tagName==='INPUT'||el.tagName==='TEXTAREA'))el.placeholder=el.getAttribute(ar()?'data-ar':'data-en')})}
+ ph();new MutationObserver(ph).observe(h,{attributes:true,attributeFilter:['lang']});
+ var type=document.getElementById('sgtype'),why=document.getElementById('sgwhy'),nm=document.getElementById('sgname'),st=document.getElementById('sgstatus');
+ document.querySelectorAll('.sgchip').forEach(function(c){c.onclick=function(){type.value=c.getAttribute(ar()?'data-ar':'data-en');type.classList.remove('bad');type.focus()}});
+ type.addEventListener('input',function(){type.classList.remove('bad')});
+ document.getElementById('sgform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var t=type.value.trim();
+  if(!t){type.classList.add('bad');type.focus();st.textContent=ar()?'اكتب نوع المحتوى الأول.':'Please enter a content type first.';st.hidden=false;return}
+  var rec={type:t,why:why.value.trim(),name:nm.value.trim(),date:new Date().toISOString()};
+  try{var all=JSON.parse(localStorage.getItem('suggestions')||'[]');all.push(rec);localStorage.setItem('suggestions',JSON.stringify(all))}catch(x){}
+  var body=(ar()?'نوع المحتوى: ':'Content type: ')+rec.type+'\n'+(rec.why?(ar()?'التفاصيل: ':'Details: ')+rec.why+'\n':'')+(rec.name?(ar()?'الاسم: ':'Name: ')+rec.name:'');
+  if(SUGGEST_EMAIL){
+   window.location.href='mailto:'+SUGGEST_EMAIL+'?subject='+encodeURIComponent(ar()?'اقتراح نوع محتوى جديد':'New content type suggestion')+'&body='+encodeURIComponent(body);
+   st.textContent=ar()?'شكراً! اتفتح تطبيق الإيميل عندك، اضغط إرسال وهيوصلنا اقتراحك. 💙':'Thank you! Your email app opened. Press send and your suggestion reaches us. 💙';
+  }else{
+   st.textContent=ar()?'شكراً! اقتراحك اتحفظ على جهازك. (صاحب الموقع لسه موصّلش استقبال الاقتراحات.)':'Thank you! Your suggestion was saved on this device. (The site owner has not connected suggestion delivery yet.)';
+  }
+  st.hidden=false;type.value='';why.value='';nm.value='';
+ });
+})();
+</script>
+<script>
+(function(){
+ var h=document.documentElement,WA='201128078370',sel=null;
+ function ar(){return h.lang==='ar'}
+ function ad(n){return String(n).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
+ function bi(p){return '<span class="ar">'+p[0]+'</span><span class="en">'+p[1]+'</span>'}
+ var N={gaming:['🎮','الألعاب','Gaming'],marketing:['📈','التسويق','Marketing'],tech:['💻','التقنية','Tech']};
+ var LV={nw:['مبتدئ ومعنديش قناة','Beginner, no channel yet'],st:['عندي قناة وبدأت','I have a channel and started'],gr:['عندي قناة ومشتركين','I have a channel with subscribers']};
+ var GL={subs:['زيادة المشتركين','Grow subscribers'],money:['أبدأ الربح','Start earning'],brand:['بناء هوية وأسلوب','Build identity and style']};
+ var HR={3:['٣ ساعات في الأسبوع','3 hours a week'],6:['٦ ساعات في الأسبوع','6 hours a week'],10:['١٠ ساعات أو أكتر في الأسبوع','10+ hours a week']};
+ var VID={3:[1,2],6:[2,3],10:[3,5]};
+ var ID={
+  gaming:[['٥ حيل في لعبتك المفضلة','5 tricks in your favorite game'],['مراجعة سريعة للعبة جديدة','A quick review of a new game'],['أحسن لحظات مضحكة','Funniest moments'],['أحسن إعدادات للعبة','Best settings for a game'],['مقارنة بين لعبتين','Comparing two games']],
+  marketing:[['يعني إيه تسويق رقمي؟','What is digital marketing?'],['٥ أدوات مجانية للتسويق','5 free marketing tools'],['تحليل إعلان مشهور','Breaking down a famous ad'],['إزاي تعمل صفحة لمشروع صغير','How to set up a page for a small project'],['أخطاء المبتدئين في السوشيال ميديا','Beginner mistakes on social media']],
+  tech:[['تطبيقات مفيدة للطلبة','Useful apps for students'],['١٠ إعدادات مخفية في الموبايل','10 hidden phone settings'],['مراجعة حاجة بتستخدمها فعلاً','Review something you actually use'],['مقارنة بين تطبيقين','Comparing two apps'],['إزاي تسرّع موبايلك','How to speed up your phone']]
+ };
+ function pick(n){return document.querySelector('input[name="'+n+'"]:checked').value}
+ function wl(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
+ function msg(){
+  if(!sel)return ar()?'السلام عليكم، عايز أشترك في خطة المتابعة الشخصية الشهرية. ممكن تعرّفني بالتفاصيل والأسعار؟':'Hello, I would like to subscribe to the monthly personal follow-up plan. Could you share the details and prices?';
+  var i=ar()?1:2,j=ar()?0:1,n=N[sel.n][i];
+  return ar()
+   ?'السلام عليكم، عملت خطتي من الموقع.\nالمجال: '+n+'\nالمستوى: '+LV[sel.lv][j]+'\nالوقت: '+HR[sel.hr][j]+'\nالهدف: '+GL[sel.gl][j]+'\nعايز أشترك في خطة المتابعة الشخصية الشهرية. ممكن تعرّفني بالتفاصيل والأسعار؟'
+   :'Hello, I made my plan on the site.\nNiche: '+n+'\nLevel: '+LV[sel.lv][j]+'\nTime: '+HR[sel.hr][j]+'\nGoal: '+GL[sel.gl][j]+'\nI would like to subscribe to the monthly personal follow-up plan. Could you share the details and prices?';
+ }
+ function refresh(){document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wl(msg())})}
+ refresh();new MutationObserver(refresh).observe(h,{attributes:true,attributeFilter:['lang']});
+
+ document.getElementById('mpform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=pick('niche'),lv=pick('level'),hr=pick('hours'),gl=pick('goal');
+  sel={n:n,lv:lv,hr:hr,gl:gl};
+  var L=VID[hr][0],S=VID[hr][1],id=ID[n],nn=N[n];
+  var w1={
+   nw:['جهّز القناة (اسم ولوجو وغلاف ووصف) واكتب ١٥ فكرة فيديو في مجال '+nn[1],'Set up the channel (name, logo, banner, description) and write 15 video ideas in '+nn[2]],
+   st:['راجع قناتك: العناوين والصور المصغرة، وحدد أحسن فيديو عندك واعرف ليه نجح','Audit your channel: titles and thumbnails, find your best video and why it worked'],
+   gr:['حلل أحسن ٣ فيديوهات عندك وحدد الفورمات اللي هتكرره','Analyze your top 3 videos and pick the format you will repeat']}[lv];
+  var t1=lv==='nw'?['قناة جاهزة + ١٥ فكرة','Channel ready + 15 ideas']:['خطة محتوى واضحة','A clear content plan'];
+  function post(extraAr,extraEn,s2){var ss=s2||S;return ['انزل '+ad(L)+' فيديو طويل و'+ad(ss)+' شورتس. '+extraAr,'Publish '+L+' long video(s) and '+ss+' Short(s). '+extraEn]}
+  var w2=post('ابدأ بـ «'+id[0][0]+'» و«'+id[1][0]+'»','Start with “'+id[0][1]+'” and “'+id[1][1]+'”');
+  var w3p=post('فكرة: «'+id[2][0]+'»','Idea: “'+id[2][1]+'”');
+  var w3=['حسّن العناوين والصور المصغرة بناءً على الإحصائيات. '+w3p[0],'Improve titles and thumbnails using your analytics. '+w3p[1]];
+  var w4x={
+   subs:['ركّز على الشورتس واطلب الاشتراك في آخر كل فيديو. ','Lean on Shorts and ask for the subscription at the end of every video. '],
+   money:['تابع المشتركين وساعات المشاهدة مقابل شروط الربح، وجهّز نبذة عن قناتك لعروض الرعاية. ','Track subscribers and watch hours against the monetization requirements, and prepare a short channel bio for sponsors. '],
+   brand:['ثبّت أسلوب القناة: شكل الصور المصغرة والمقدمة والفورمات المتكرر. ','Lock your channel style: thumbnail look, intro and a repeatable format. ']}[gl];
+  var w4p=post('فكرة: «'+id[3][0]+'»','Idea: “'+id[3][1]+'”',gl==='subs'?S+1:S);
+  var w4=[w4x[0]+w4p[0],w4x[1]+w4p[1]];
+  var tg={subs:['مشتركين جداد','New subscribers'],money:['اقتراب من شروط الربح','Closer to monetization'],brand:['هوية واضحة','A clear identity']}[gl];
+  var tot=L+S;
+  var rows=[
+   [['الأسبوع ١','Week 1'],w1,t1],
+   [['الأسبوع ٢','Week 2'],w2,['منشور '+ad(tot)+' فيديوهات',tot+' videos published']],
+   [['الأسبوع ٣','Week 3'],w3,['نسبة نقر أعلى','Higher click rate']],
+   [['الأسبوع ٤','Week 4'],w4,tg]];
+  var tr=rows.map(function(r){return '<tr><td>'+bi(r[0])+'</td><td>'+bi(r[1])+'</td><td>'+bi(r[2])+'</td></tr>'}).join('');
+  var tags=['<span class="tag">'+nn[0]+' '+bi([nn[1],nn[2]])+'</span>','<span class="tag">'+bi(LV[lv])+'</span>','<span class="tag">⏱️ '+bi(HR[hr])+'</span>','<span class="tag">🎯 '+bi(GL[gl])+'</span>'].join('');
+  var ideas=id.map(function(x){return '<li>'+bi(x)+'</li>'}).join('');
+  document.getElementById('myplan').innerHTML=
+   '<div class="card mp"><h3>'+bi(['خطتك لأول ٣٠ يوم','Your first 30 days'])+'</h3><div class="tags">'+tags+'</div>'+
+   '<div class="tw"><table><thead><tr><th>'+bi(['الأسبوع','Week'])+'</th><th>'+bi(['اللي تعمله','What to do'])+'</th><th>'+bi(['الهدف','Goal'])+'</th></tr></thead><tbody>'+tr+'</tbody></table></div>'+
+   '<h3 style="margin-top:22px">'+bi(['أفكار فيديوهات ليك','Video ideas for you'])+'</h3><ul class="plan">'+ideas+'</ul>'+
+   '<p class="note">'+bi(['الخطة دي إرشادية عامة. للمتابعة الشخصية والاشتراكات الشهرية تواصل معنا على واتساب: ','This is a general guide. For personal follow-up and monthly subscriptions, contact us on WhatsApp: '])+'<bdi dir="ltr">01128078370</bdi></p></div>';
+  document.getElementById('mpactions').hidden=false;
+  refresh();
+  document.getElementById('myplan').scrollIntoView({behavior:'smooth',block:'start'});
+ });
+})();
+</script>
+</body>
+</html>
